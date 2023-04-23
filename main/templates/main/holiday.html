@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+     <meta charset="utf-8">
+    <title>Шаблоны сайтов - Web-exito.ru</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="{% static 'main/css/bootstrap.css'%}" rel="stylesheet" media="screen">
+    <link href="{% static 'main/css/style.css'%}" rel="stylesheet" media="screen">
+    <link href="{% static 'main/css/jquery.countdown.css'%}" rel="stylesheet" type="text/css"> 
+<!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-5572139489027959",
+          enable_page_level_ads: true
+     });
+</script>
+    <!-- JavaScript plugins (requires jQuery) -->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script type="text/javascript" src="{% static 'main/js/jquery.countdown.min.js'%}"></script>
+	<script type="text/javascript" src="{% static 'main/js/jquery.countdown-ru.js'%}"></script>
+
+<!--[if IE 7]>
+    <link rel="stylesheet" href="assets/font/phone-ie7.css"><![endif]-->
+
+<!-- О компании -->  
+<body>
+<div class="menu">
+    <p class="inmenu">
+        <a href="{% url 'main:index'%}">Главная</a>
+        <a href="{% url 'main:aboutus'%}">Наши преимущества</a>
+        <a href="{% url 'main:howto'%}">Порядок работы</a>
+        <a href="{% url 'main:programs'%}">Программы</a>
+        <a href="{% url 'main:holiday'%}">Наши праздники</a>
+    </p>
+</div>
+<div class="row text-center" style=" margin:30px 0 70px">
+    <div style="margin-bottom:30px">
+        <h1 style="color: #bc2e88;">НАШИ ПРАЗДНИКИ</h1>
+    </div>    
+    <div class="col-6" style="padding:25px">
+        <img src="{% static 'main/img/ourworks/1.jpg'%}" style="margin-left: -23px;">
+     </div>   
+    <div class="col-6" style="padding:25px">
+        <img src="{% static 'main/img/ourworks/2.jpg'%}" style="margin-right: -23px;">
+     </div>   
+    <div class="col-4" style="padding:30px">
+        <img src="{% static 'main/img/ourworks/3.jpg'%}">
+     </div>   
+    <div class="col-4" style="padding:30px">
+        <img src="{% static 'main/img/ourworks/4.jpg'%}">
+     </div>   
+    <div class="col-4" style="padding:30px">
+        <img src="{% static 'main/img/ourworks/5.jpg'%}">
+     </div>   
+    <div class="col-4" style="padding:30px">
+        <img src="{% static 'main/img/ourworks/6.jpg'%}">
+     </div>   
+    <div class="col-4" style="padding:30px">
+        <img src="{% static 'main/img/ourworks/7.jpg'%}">
+     </div>   
+    <div class="col-4" style="padding:30px">
+        <img src="{% static 'main/img/ourworks/8.jpg'%}">
+     </div>   
+</div>
+</div>
+</div>     
+    <!-- Первый экран -->   
+    <div class="underheader"> 
+        <div class="header">
+               <div class="container">
+                       <div class="row">
+                        <div class="col-4">
+                            <img src="{% static 'main/img/logo.png'%}" style="margin-top:-42px">
+                        </div>
+                        <div class="col-4">
+                            <p style="margin: 40px 0 0 -50px;">Кампания<br>ИНН <br>КПП </p>
+                            <a style="color:#9e0067; cursor: default;" href="https://web-exito.ru/shablony-landing-page/" target="_blank">Скачать шаблоны сайтов - Web-exito.ru</a>
+                        </div>
+                            <div class="col-4 text-right">
+                                  <p style="font-size:32px; padding-top:45px;padding-right: 20px;">+7(800)000-00-00</p>
+                               <p style="padding-right: 20px;">Часы работы: 10:00 - 22:00</p>
+                       </div>
+                  </div>
+            </div>
+       </div>
+       </div>
+         <!-- ====================== MODAL ================= -->  
+         <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                           <div class="forma" style="">
+                              <div id="note3"></div>
+                                  <div id="fields3">
+                                       <p><span class="borbotred" style="font-size:25px">ОСТАВЬТЕ ЗАЯВКУ</span><br><br><span data-toogle="popover" data-content="Введите телефон"  style="font-size:19px">и наши менеджеры<br>бесплатно пришлют<br>Вам полный список<br>наших программ</span><br></p>
+                                      <form action="index1.php" method="Post">
+                                           <input class="clearble form-control" name="name" type="text" size="20" placeholder="Ваше имя" style="margin-top: 20px;">
+                                        <input data-toogle="popover" data-content="Введите данные" data-placement="top"  id="inp3" class="clearble form-control" name="phone" type="text" size="20" placeholder="Ваш телефон" style="margin-top: 15px;">
+                                        <input required class="btn btn-red" type="submit" value="ЗАКАЗАТЬ">
+                                         </form>
+                                   </div>
+                         </div>
+           </div> 
+           <!-- ====================== MODAL ================= -->
+   
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="{% static 'main/js/bootstrap.min.js'%}"></script>
+      <script src="{% static 'main/js/contact.js'%}"></script>
+   <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+       <!--<script src="assets/js/respond.js"></script>-->
+     </body>
+   </html>
