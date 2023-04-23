@@ -57,7 +57,7 @@
           <p style="padding-right: 20px;">Часы работы: 10:00 - 22:00</p>
         </div>
         <div class="col-4 text-right">
-          <a href="{% url 'users:login' %}"><p class="descr">Профиль</p></a>
+          <a href="{% if user.is_anonymous %}{% url 'users:login' %}{% else %}{% url 'users:profile' %}{% endif %}"><p class="descr">Профиль</p></a>
         </div>
       </div>
     </div>
