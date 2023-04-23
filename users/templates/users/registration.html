@@ -172,17 +172,21 @@ background: #0078BF;
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
-    <form>
+    <form method="post" action="{% url 'users:registration' %}">
+        {% csrf_token %}
         <h3>Регистрация</h3>
 
-        <label for="username">Логин</label>
-        <input type="text" placeholder="Почта" id="username">
+        <label for="{{ form.username.id_for_label }}">Логин</label>
+        {{ form.username }}
+        {% comment %} <input type="text" placeholder="Почта" id="username"> {% endcomment %}
 
-        <label for="password">Пароль</label>
-        <input type="password" placeholder="Пароль" id="password">
+        <label for="{{ form.password1.id_for_label }}">Пароль</label>
+        {{ form.password1 }}
+        {% comment %} <input type="password" placeholder="Пароль" id="password"> {% endcomment %}
 
-        <label for="password">Повторите пароль</label>
-        <input type="password" placeholder="Повторите пароль" id="password">
+        <label for="{{ form.password2.id_for_label }}">Повторите пароль</label>
+        {{ form.password2 }}
+        {% comment %} <input type="password" placeholder="Повторите пароль" id="password"> {% endcomment %}
 
         <button class='test' type="submit">Зарегистрироваться</button>
     </form>
