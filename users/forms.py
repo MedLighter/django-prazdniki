@@ -32,3 +32,25 @@ class UserRegistrationForm(UserCreationForm):
         model = User
         fields = ('username', 'password1', 'password2')
         
+
+class UserProfileForm(UserChangeForm):
+    first_name = forms.CharField(widget=forms.TextInput(
+        attrs={
+        'class': 'form-control'
+    }),
+        required=False)
+    last_name = forms.CharField(widget=forms.TextInput(
+        attrs={
+        'class': 'form-control'
+    }),
+        required=False)
+    image = forms.ImageField(widget=forms.FileInput(
+        attrs={'class': 'custom-file-input',
+               'id': 'image-upload',
+               }),
+        required=False
+    )
+
+    class Meta:
+        model = User
+        fields = ('first_name', 'last_name', 'image')

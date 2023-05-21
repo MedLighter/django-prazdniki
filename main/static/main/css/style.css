@@ -103,7 +103,7 @@ input {
 }
 .forma {
 	text-align:center;
-	position:absolute;
+	margin-left: 37%;
 	z-index:100;
 	display:block;
 	top:85px;
@@ -128,6 +128,25 @@ input {
 	right: inherit !important;
 }
 
+.forma_anonUser {
+	text-align:center;
+	margin-left: 37%;
+	z-index:100;
+	display:block;
+	top:85px;
+	width:269px;
+	height:91px;
+	right:150px;
+	padding:20px 39px;	
+	color:#000;
+	border-radius:10px;
+	background-color:#fff;
+  background-image: -moz-linear-gradient( 90deg, rgb(176,200,223) 0%, rgb(208,222,235) 100%);
+  background-image: -webkit-linear-gradient( 90deg, rgb(176,200,223) 0%, rgb(208,222,235) 100%);
+  background-image: -ms-linear-gradient( 90deg, rgb(176,200,223) 0%, rgb(208,222,235) 100%);
+  background-repeat: repeat-x;
+	box-shadow: 0 0 20px 10px rgba(255,255,255,.5);
+}
 
 .polit {
 	font-size:14px;
