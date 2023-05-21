@@ -222,6 +222,7 @@
                 margin-left: -180px;
                 font-size: 22px;
                 color: #ffffff;
+                display: none;
             }
             .logout{
                 margin-left: 900px;
@@ -235,6 +236,10 @@
                 position: absolute;
             }
 
+            .photo{
+                margin-left: 600px;
+                margin-bottom: -110px;
+            }
 
       </style>
       <script src="https://kit.fontawesome.com/cf5ef8a0fd.js" crossorigin="anonymous"></script>
@@ -262,11 +267,11 @@
           
 
             <img class="avatar" src="{% if request.user.image %}{{ request.user.image.url }}{% else %}http://static.physoc.org/app/uploads/2019/10/09133258/Honorary-Members-placeholder.jpg {% endif %}" alt="1"/>
-          {% comment %} <div class="photo" style='margin-top: 30px'>
+            <div class="photo" style='margin-top: 30px'>
                 <label class="custom-file-upload" for="{{ form.image.id_for_label }}">Выберите изображение для профиля:</label>
                     {{ form.image }}
                     <li>Советуем выбрать картинку квадратной формы!</li>
-          </div> {% endcomment %}
+            </div> 
 
 
           <button class="test" type="submit">Подтвердить</button>
