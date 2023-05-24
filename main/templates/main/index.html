@@ -57,13 +57,14 @@
           <p style="padding-right: 20px;">Часы работы: 10:00 - 22:00</p>
         </div>
         <div class="col-4 text-right">
-          <a href="{% if user.is_anonymous %}{% url 'users:login' %}{% else %}{% url 'users:profile' %}{% endif %}"><p class="descr">{% if user.is_anonymous %}Авторизация{% else %}Профиль{% endif %}</p></a>
+          {% if user.is_staff %} <a href="{% url 'admin:index' %}"><p class="descr">Панель управления</p></a>{% endif %}
+          <a href="{% if user.is_anonymous %}{% url 'users:login' %}{% else %}{% url 'users:profile' %}{% endif %}"><p class="descr" {% if user.is_staff %}style="padding-top: 0px;"{% endif %}>{% if user.is_anonymous %}Авторизация{% else %}Профиль{% endif %}</p></a>
         </div>
       </div>
     </div>
   </div>
   </div>
-
+        
   <!-- id="ajax-contact-form" -->
   <div class="first-screen">
     <div class="container">
@@ -73,6 +74,19 @@
               детский праздник всего от 3000 руб</span></p>
         </div>
       </div>
+      
+          {% if messages or form.non_field_errors %}
+              <div class="forma_neoch" 
+                    style="top:365px; left: 1000px">
+                  {% if form.non_field_errors %}
+                    {{ form.non_field_errors }}
+                  {% endif %}
+                    {% if messages %}
+                      {% for message in messages %}
+                      {{ message }}
+                      {% endfor %}
+                    {% endif %}
+                </div>{% endif %}
       {% if request.user.is_authenticated %}
         <div class="forma" style="top:365px; left: 800px">
           <div id="note"></div>

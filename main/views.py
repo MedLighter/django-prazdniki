@@ -18,6 +18,7 @@ def index(request):
         form = UserCreateApplicationForm(request.POST, request.FILES)
         if form.is_valid():
             form.instance.user_id = request.user
+            messages.success(request, 'Вы успешно зарегистрировали заявку!')
             form.save()
             return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     else:
