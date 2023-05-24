@@ -80,14 +80,17 @@
             <p><span class="borbotred" style="font-size:25px;">ОСТАВЬТЕ ЗАЯВКУ</span><br><br><span data-toogle="popover"
                 data-content="Введите телефон" style="font-size:19px">и наши менеджеры<br>бесплатно подберут<br>идеальную
                 программу<br>для Вашего ребенка</span><br></p>
-            <form action="#" method="Post">
+            <form action="{% url 'main:index' %}" method="POST">
             {% csrf_token %}
-              <input class="clearble form-control" name="name" type="text" size="20" placeholder="Ваше имя"
+
+            {{ form.customer_name }}
+            {{ form.customer_number }}
+               {% comment %} <input class="clearble form-control" name="name" type="text" size="20" placeholder="Ваше имя"
                 style="margin-top: 20px;">
-              <input data-toogle="popover" data-content="Введите данные" data-placement="top" id="inp"
+              <input data-toogle="popover" data-content="Введите данные" data-placement="top" 
                 class="clearble form-control" name="phone" type="text" size="20" placeholder="Ваш телефон"
-                style="margin-top: 15px;">
-              <input required class="btn btn-red" type="submit" value="ЗАКАЗАТЬ">
+                style="margin-top: 15px;">{% endcomment %}
+              <input required class="btn btn-red" type="submit" value="ЗАКАЗАТЬ"> 
             </form>
           </div>
         </div>

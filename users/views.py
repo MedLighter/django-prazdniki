@@ -2,6 +2,7 @@ from django.shortcuts import render, HttpResponseRedirect
 from django.contrib import auth
 from django.urls import reverse
 from users.forms import UserLoginForm, UserRegistrationForm, UserProfileForm
+from main.models import Orders
 
 
 def login(request):
@@ -46,8 +47,18 @@ def profile(request):
             return HttpResponseRedirect(reverse('users:profile'))
     else:
         form = UserProfileForm(instance=request.user)
+
+    orders = Orders.objects.filter(user_id = request.user.id)
     context = {
         'form': form,
-        'title': 'Profile'
+        'title': 'Profile',
+        'orders': orders
     }
     return render(request, 'users/profile.html', context)
+
+
+def delete_order(request, order_id):
+    order = Orders.objects.get(id=order_id)
+    if order.user_id == request.user:
+        order.delete()
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))

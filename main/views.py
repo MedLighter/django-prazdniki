@@ -1,4 +1,7 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
+from .forms import UserCreateApplicationForm
+from django.contrib import messages
 
 # Create your views here.
 def aboutus(request):
@@ -11,7 +14,20 @@ def howto(request):
     return render(request, 'main/howto.html')
 
 def index(request):
-    return render(request, 'main/index.html')
+    if request.method == "POST":
+        form = UserCreateApplicationForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.instance.user_id = request.user
+            form.save()
+            return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+    else:
+        form = UserCreateApplicationForm()
+
+
+    context = {
+        'form': UserCreateApplicationForm
+    }
+    return render(request, 'main/index.html', context)
 
 def mastets(request):
     return render(request, 'main/mastets.html')

@@ -6,6 +6,9 @@ class Orders(models.Model):
     user_id = models.ForeignKey(User, verbose_name='Заказчик', on_delete=models.PROTECT)
     order_description = models.CharField(max_length=150)
 
+    def __str__(self):
+        return f'{self.user_id}|{self.order_description}'
+
     class Meta:
         verbose_name = 'Заказ'
         verbose_name_plural = 'Заказы'
@@ -15,6 +18,10 @@ class Application(models.Model):
     user_id = models.ForeignKey(User, verbose_name='Заказчик', on_delete=models.PROTECT)
     customer_name = models.CharField(max_length=100)
     customer_number = models.CharField(max_length=20)
+
+
+    def __str__(self):
+        return f'{self.user_id}|{self.customer_name}|{self.customer_number}'
 
     class Meta:
         verbose_name = 'Заявка'
